@@ -139,5 +139,108 @@ public:
     }
 
 
+    static  void Swap(double& A, double& B)
+    {
+        double Temp;
+
+        Temp = A;
+        A = B;
+        B = Temp;
+    }
+
+    static  void Swap(bool& A, bool& B)
+    {
+        bool Temp;
+
+        Temp = A;
+        A = B;
+        B = Temp;
+    }
+
+    static  void Swap(char& A, char& B)
+    {
+        char Temp;
+
+        Temp = A;
+        A = B;
+        B = Temp;
+    }
+
+    static  void Swap(string& A, string& B)
+    {
+        string Temp;
+
+        Temp = A;
+        A = B;
+        B = Temp;
+    }
+
+    static  void Swap(clsDate& A, clsDate& B)
+    {
+        clsDate::SwapDates(A, B);
+
+    }
+
+    static  void ShuffleArray(int arr[100], int arrLength)
+    {
+
+        for (int i = 0; i < arrLength; i++)
+        {
+            Swap(arr[RandomNumber(1, arrLength) - 1], arr[RandomNumber(1, arrLength) - 1]);
+        }
+
+    }
+
+    static  void ShuffleArray(string arr[100], int arrLength)
+    {
+
+        for (int i = 0; i < arrLength; i++)
+        {
+            Swap(arr[RandomNumber(1, arrLength) - 1], arr[RandomNumber(1, arrLength) - 1]);
+        }
+
+    }
+
+    static string  Tabs(short NumberOfTabs)
+    {
+        string t = "";
+
+        for (int i = 1; i < NumberOfTabs; i++)
+        {
+            t = t + "\t";
+            cout << t;
+        }
+        return t;
+
+    }
+
+    static string  EncryptText(string Text, short EncryptionKey)
+    {
+
+        for (int i = 0; i <= Text.length(); i++)
+        {
+
+            Text[i] = char((int)Text[i] + EncryptionKey);
+
+        }
+
+        return Text;
+
+    }
+
+    static string  DecryptText(string Text, short EncryptionKey)
+    {
+
+        for (int i = 0; i <= Text.length(); i++)
+        {
+
+            Text[i] = char((int)Text[i] - EncryptionKey);
+
+        }
+        return Text;
+
+    }
+
+
 };
 
